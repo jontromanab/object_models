@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="laugh_out_loud_joke_book">
+  <link name="laugh_out_loud_joke_book_link">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package:/object_models/models/stl/laugh_out_loud_joke_book.dae " />
+      </geometry>
+	<material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://object_models/models/stl/laugh_out_loud_joke_book.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="oreo_link">
+    <!--material>Gazebo/Grey</material-->
+  </gazebo>
+</robot>

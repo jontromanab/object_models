@@ -1,0 +1,34 @@
+<robot name="coke_can_model">
+  <link name="coke_can">
+    <inertial>
+      <mass value="0.390" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 0.06" /> 
+      <inertia  ixx="0.00058" ixy="0.0"  ixz="0.0"  iyy="0.00058"  iyz="0.0"  izz="0.00019" />
+    </inertial>
+      <max_vel>0.1</max_vel>
+      <min_depth>0.001</min_depth>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+    <visual>
+      <!-- visual origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 -0.18" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://object_models/models/stl/coke_can.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <collision>
+      <!-- collision origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="0 0 -0.18" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://object_models/models/stl/coke_can.dae" scale="0.001 0.001 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="coke_can">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+    <kp>100000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+</robot>

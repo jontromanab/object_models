@@ -1,0 +1,166 @@
+<robot name="table_layout">
+  <link name="plate_place">
+    <inertial>
+      <origin xyz="0 0 0.005" /> 
+      <mass value="1.0" />
+      <inertia  ixx="100000.0" ixy="0.0"  ixz="0.0"  iyy="100000.0"  iyz="0.0"  izz="100000.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <cylinder radius="0.13" length="0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <cylinder radius="0.13" length="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="bowl_place">
+    <inertial>
+      <origin xyz="0 0 0.005" /> 
+      <mass value="1.0" />
+      <inertia  ixx="100000.0" ixy="0.0"  ixz="0.0"  iyy="100000.0"  iyz="0.0"  izz="100000.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <cylinder radius="0.07" length="0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <cylinder radius="0.07" length="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="mug_place">
+    <inertial>
+      <origin xyz="0 0 0.005" /> 
+      <mass value="1.0" />
+      <inertia  ixx="100000.0" ixy="0.0"  ixz="0.0"  iyy="100000.0"  iyz="0.0"  izz="100000.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.01" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <cylinder radius="0.04" length="0.01"/>
+      </geometry>
+    </collision>
+  </link> 
+  <link name="fork_place">
+    <inertial>
+      <origin xyz="0 0 0.005" /> 
+      <mass value="1.0" />
+      <inertia  ixx="100000.0" ixy="0.0"  ixz="0.0"  iyy="100000.0"  iyz="0.0"  izz="100000.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <box size="0.13 0.03 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <box size="0.13 0.03 0.01"/>
+      </geometry>
+    </collision>
+  </link> 
+  <link name="spoon_place">
+    <inertial>
+      <origin xyz="0 0 0.005" /> 
+      <mass value="1.0" />
+      <inertia  ixx="100000.0" ixy="0.0"  ixz="0.0"  iyy="100000.0"  iyz="0.0"  izz="100000.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <box size="0.13 0.03 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <box size="0.13 0.03 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="knife_place">
+    <inertial>
+      <origin xyz="0 0 0.005" /> 
+      <mass value="1.0" />
+      <inertia  ixx="100000.0" ixy="0.0"  ixz="0.0"  iyy="100000.0"  iyz="0.0"  izz="100000.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <box size="0.13 0.03 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.005"/>
+      <geometry>
+        <box size="0.13 0.03 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_plate_fork" type="fixed">
+    <origin xyz="0 -0.17 0" rpy="0 0 0"/>
+    <parent link="plate_place"/>
+    <child link="fork_place"/>
+  </joint>
+  <joint name="joint_plate_knife" type="fixed">
+    <origin xyz="0 0.17 0" rpy="0 0 0"/>
+    <parent link="plate_place"/>
+    <child link="knife_place"/>
+  </joint>
+  <joint name="joint_plate_spoon" type="fixed">
+    <origin xyz="0 0.22 0" rpy="0 0 0"/>
+    <parent link="plate_place"/>
+    <child link="spoon_place"/>
+  </joint>
+
+  <joint name="joint_plate_mug" type="fixed">
+    <origin xyz="-0.15 0.15 0" rpy="0 0 0"/>
+    <parent link="plate_place"/>
+    <child link="mug_place"/>
+  </joint>
+
+ <joint name="joint_plate_bowl" type="fixed">
+    <origin xyz="-0.18 -0.18 0" rpy="0 0 0"/>
+    <parent link="plate_place"/>
+    <child link="bowl_place"/>
+  </joint>
+
+
+ <gazebo reference="plate_place">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+ <gazebo reference="mug_place">
+    <material>Gazebo/Red</material>
+  </gazebo>
+ <gazebo reference="spoon_place">
+    <material>Gazebo/Green</material>
+  </gazebo>
+ <gazebo reference="fork_place">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+ <gazebo reference="knife_place">
+    <material>Gazebo/Purple</material>
+  </gazebo>
+ <gazebo reference="bowl_place">
+    <material>Gazebo/Turquoise</material>
+  </gazebo>
+</robot>
